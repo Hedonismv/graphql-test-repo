@@ -6,6 +6,7 @@ const typeDefs = gql`
     "Get tracks array for homepage grid"
     type Query {
         tracksForHome:[Track!]!
+        track(id: ID!): Track
     }
     
     "Author of a complete track or module"
@@ -23,6 +24,17 @@ const typeDefs = gql`
         thumbnail: String
         length: Int
         modulesCount: Int
+        "The track's complete description, can be in Markdown format"
+        description: String
+        "The number of types a track has been viewed"
+        numberOfViews: Int
+        modules: [Module!]!
+    }
+    
+    type Module{
+        id:ID!
+        title: String!
+        length: Int
     }
     
     
