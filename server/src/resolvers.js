@@ -5,7 +5,7 @@ const resolvers = {
 		}
 	},
 	Track:{
-		getAuthor:({authorId}, _, {dataSources}) => {
+		author:({authorId}, _, {dataSources}) => {
 			return dataSources.trackAPI.getAuthor(authorId);
 		}
 	}
